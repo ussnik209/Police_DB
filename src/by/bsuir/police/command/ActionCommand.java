@@ -1,6 +1,5 @@
 package by.bsuir.police.command;
 
-
 import javax.servlet.http.HttpServletRequest;
 
 /**

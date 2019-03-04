@@ -1,10 +1,9 @@
 package by.bsuir.police.controller;
 
-
 import by.bsuir.police.command.ActionCommand;
 import by.bsuir.police.command.CommandFactory;
-import by.bsuir.police.command.EmptyCommand;
 import by.bsuir.police.command.Router;
+import by.bsuir.police.command.impl.manager.EmptyCommand;
 import by.bsuir.police.pool.PoolConnection;
 
 import javax.servlet.RequestDispatcher;
