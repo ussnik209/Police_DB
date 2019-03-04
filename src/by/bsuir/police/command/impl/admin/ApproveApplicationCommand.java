@@ -1,0 +1,97 @@
+package by.bsuir.police.command.impl.admin;
+
+import by.bsuir.police.command.ActionCommand;
+import by.bsuir.police.command.PagePath;
+import by.bsuir.police.command.Router;
+import by.bsuir.police.entity.Document;
+import by.bsuir.police.entity.Person;
+import by.bsuir.police.exception.ServiceException;
+import by.bsuir.police.service.impl.DocServiceImpl;
+import by.bsuir.police.service.impl.PersonServiceImpl;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+
+import javax.servlet.http.HttpServletRequest;
+import java.sql.Date;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Optional;
+
+/**
+ * The type Approve application command.
+ */
+public class ApproveApplicationCommand implements ActionCommand {
+
+    private static Logger LOGGER = LogManager.getLogger(ApproveApplicationCommand.class);
+    private static final String DOC_ID = "docId";
+    private static final String NAME = "name";
+    private static final String LAST_NAME = "last";
+    private static final String BIRTH = "birthday";
+    private static final String WEIGHT = "weight";
+    private static final String HEIGHT = "height";
+    private static final String HAIR = "hair";
+    private static final String NATIONALITY = "nationality";
+    private static final String SEX = "gender";
+    private static final String CHARACTERISTICS = "characteristics";
+    private static final String STATUS = "status";
+
+    @Override
+    public Router execute(HttpServletRequest request) {
+        PersonServiceImpl personService = new PersonServiceImpl();
+        DocServiceImpl docService = new DocServiceImpl();
+        Router router = new Router();
+        Date birth = null;
+        int weight;
+        int height;
+        int status;
+
+        String currentId = request.getParameter(DOC_ID);
+        String currentName = request.getParameter(NAME);
+        String currentLast = request.getParameter(LAST_NAME);
+        String currentBirth = request.getParameter(BIRTH);
+        String currentWeight = request.getParameter(WEIGHT);
+        String currentHeight = request.getParameter(HEIGHT);
+        String currentHair = request.getParameter(HAIR);
+        String currentNationality = request.getParameter(NATIONALITY);
+        String currentSex = request.getParameter(SEX);
+        String currentCharacteristics = request.getParameter(CHARACTERISTICS);
+        String currentStatus = request.getParameter(STATUS);
+        Optional<Document> document = docService.searchById(Integer.parseInt(currentId));
+
+        DateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+        try {
+            birth = new Date(formatter.parse(currentBirth).getTime());
+
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        if (currentHeight.isEmpty()) {
+
+            height = 0;
+        } else {
+            height = Integer.parseInt(currentHeight);
+        }
+        if (currentWeight.isEmpty()) {
+            weight = 0;
+        } else {
+            weight = Integer.parseInt(currentWeight);
+        }
+        status = Integer.parseInt(currentStatus);
+        try {
+            personService.addPerson(currentName, currentLast, birth, weight, height, currentHair, currentNationality,
+                    currentSex, currentCharacteristics, status, document.get().getPhoto());
+            ArrayList<Person> people = personService.showAll();
+            request.getSession().setAttribute("people", people);
+            router.setPagePath(PagePath.MAIN_PAGE.getJspPath());
+
+        } catch (Exception | ServiceException e) {
+            LOGGER.warn("Person exception", e);
+            router.setPagePath(PagePath.APPLICATION_PAGE.getJspPath());
+        }
+        router.setRouteType(Router.RouteType.REDIRECT);
+        return router;
+    }
+}
