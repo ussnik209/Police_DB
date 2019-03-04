@@ -11,7 +11,7 @@
 
     <tag>
         <name>getinfo</name>
-        <tag-class>by.epam.interpol.tag.GetInfoTag</tag-class>
+        <tag-class>by.bsuir.police.tag.GetInfoTag</tag-class>
         <body-content>empty</body-content>
     </tag>
 

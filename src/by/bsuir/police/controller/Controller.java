@@ -19,7 +19,7 @@ import java.util.Optional;
 /**
  * The type Controller.
  */
-@WebServlet("/interpol")
+@WebServlet("/police")
 @MultipartConfig(maxFileSize = 1024 * 1024 * 5, maxRequestSize = 1024 * 1024 * 5 * 5)
 public class Controller extends HttpServlet {
 
