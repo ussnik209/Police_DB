@@ -1192,7 +1192,7 @@
     </column>
     <column id="299" parent="282" name="topic">
       <Position>2</Position>
-      <DataType>varchar(20)|0s</DataType>
+      <DataType>varchar(100)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="300" parent="282" name="information">
