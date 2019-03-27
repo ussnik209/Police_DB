@@ -1150,7 +1150,7 @@
     </column>
     <column id="291" parent="281" name="reward">
       <Position>6</Position>
-      <DataType>date|0s</DataType>
+      <DataType>double|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="292" parent="281" name="doc_information">
@@ -1259,7 +1259,7 @@
     </column>
     <column id="312" parent="283" name="color_of_hair">
       <Position>8</Position>
-      <DataType>int(11)|0s</DataType>
+      <DataType>varchar(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="313" parent="283" name="nationality">
@@ -1306,7 +1306,7 @@
     </column>
     <column id="321" parent="284" name="status">
       <Position>2</Position>
-      <DataType>int(11)|0s</DataType>
+      <DataType>varchar(25)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
     <key id="322" parent="284" name="PRIMARY">
