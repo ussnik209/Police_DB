@@ -1,5 +1,5 @@
-![Диаграмма классов package Service](https://github.com/Imnotmaddy/Police_DB/blob/master/diagrams/ServiceClassDiagram.png)
-![Диаграмма классов package Dao](https://github.com/Imnotmaddy/Police_DB/blob/master/diagrams/DaoClassDiagram.png)
+[Диаграмма классов package Service](https://github.com/Imnotmaddy/Police_DB/blob/master/diagrams/ServiceClassDiagram.png)
+[Диаграмма классов package Dao](https://github.com/Imnotmaddy/Police_DB/blob/master/diagrams/DaoClassDiagram.png)
 1. Тип приложения - Веб-приложение для выполнения преимущественно на сервере в сценариях с постоянным подключением
 2.  Распределенное развертывание – необходимо обеспечить безопасность и масштабирование.       
 3. Показатели качества:
@@ -12,5 +12,5 @@
 	1. Механизмы аутентификации и авторизации, обеспечивающие передачу удостоверений на разные уровни для предоставления доступа к ресурсам
 	2. Подход к реализации связей, используемый для обеспечения обмена информацией между слоями.
 	3.  Инфраструктура управления исключениями, которая будет функционировать в каждом слое и между уровнями, если исключения распространяются в рамках системы.
-  ![Диаграмма развертывания As is/To be](https://github.com/Imnotmaddy/Police_DB/blob/master/diagrams/DeploymentDiagram.png)
- ![Диаграмма компонентов As is/To be] (https://github.com/Imnotmaddy/Police_DB/blob/master/diagrams/ComponentDiagram.png)
+ [Диаграмма развертывания As is/To be](https://github.com/Imnotmaddy/Police_DB/blob/master/diagrams/DeploymentDiagram.png)
+ [Диаграмма компонентов As is/To be](https://github.com/Imnotmaddy/Police_DB/blob/master/diagrams/ComponentDiagram.png)
