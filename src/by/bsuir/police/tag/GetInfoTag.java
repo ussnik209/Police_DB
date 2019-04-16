@@ -10,7 +10,7 @@ import java.io.IOException;
  */
 public class GetInfoTag extends TagSupport {
     public int doStartTag() throws JspException {
-        String str = "By Evgeniy Schipunov, 2018 | Epam";
+        String str = "By Evgeniy Schipunov, 2018 | BSUIR";
         try {
             JspWriter out = pageContext.getOut();
             out.write(str);
