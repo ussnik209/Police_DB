@@ -45,7 +45,7 @@
                 <span class="icon-bar"></span>
             </button>
             <a class="navbar-brand" href="#">
-                <%--<img src="/image/logo.png" width="50" height="45" class="pic" alt="POLICE">--%>
+                <img src="/image/12.jpg" width="50" height="45" alt="POLICE">
             </a>
 
         </div>
